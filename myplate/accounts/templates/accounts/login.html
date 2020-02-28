@@ -1,12 +1,15 @@
 {% extends 'base_layout.html' %}
-
+{% load crispy_forms_tags %}
 {% block content %}
-<div class="content-section">
-    <h1>login</h1>
-    <form class="site-form" action="{% url 'accounts:login'%}" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Login">
-    </form>
+<div class="content-section " style="padding-left:45%;padding-top:10%;">
+    <h1>Login</h1>
+    <div style="max-width: 300px">
+        <form class="site-form" action="{% url 'accounts:login'%}" method="post">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <input type="submit" value="Login">
+        </form>
+    </div>
+   
 </div>
 {% endblock %}
