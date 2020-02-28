@@ -1,5 +1,11 @@
 {% extends 'base_layout.html' %}
 
 {% block content %}
+{% if user.is_authenticated %}
+<form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>
+{% endif %}
     <h2>Test3</h2>
 {% endblock %}

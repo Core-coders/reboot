@@ -1,32 +1,63 @@
 {% extends 'base_layout.html' %}
 
+{% load static from staticfiles %}
 {%block content%}
 <main role="main">
       
-   
-  
-    <div class="album py-5 bg-light">
-      <div class="container">
-  
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-  
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
+  <div class="album py-5 bg-light">
+    <div class="container">
+      
+      <h2 align="center" style="color: rgb(9, 32, 75);padding-top: 5%;padding-bottom: 5%;">Lets login into <b>Myplate Portal</b></h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
               
+              <div class="card" style="width:350px">
+                  <center>
+                      <img class="card-img-top" src="{% static 'hm.png' %}" alt="Card image" style="width:200px;height:200px;padding-top: 10px;">
 
+                  </center>
+                  <div class="card-body">
+                    <h4 class="card-title">Headmaster Login</h4>
+                    <p class="card-text">This should be accessed by HM or any office bearers</p>
+                    <a href="{% url 'accounts:login' %}" class="btn btn-primary">LOGIN</a>
+                  </div>
+                </div>
 
-            </div>
           </div>
-          <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-              
+        </div>
 
-            </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            
+              <div class="card" style="width:350px">
+                  <center>
+                      <img class="card-img-top" src="{% static 'nfc.png'%}" alt="Card image" style="width:200px;height:200px;padding-top: 10px;">
+
+                  </center>                        <div class="card-body">
+                    <h4 class="card-title">Noonfeeding Committe</h4>
+                    <p class="card-text">This should be accessed by HM or any office bearers</p>
+                    <a href="{% url 'accounts:login' %}" class="btn btn-primary">LOGIN</a>
+                  </div>
+                </div>
+
           </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            
+              <div class="card" style="width:350px">
+                  <center>
+                      <img class="card-img-top" src="{% static 'hg.png'%}" alt="Card image" style="width:200px;height:200px;padding-top: 10px;">
+
+                  </center>                        <div class="card-body">
+                    <h4 class="card-title">Higher Officers</h4>
+                    <p class="card-text">This should be accessed by HM or any office bearers</p>
+                    <a href="{% url 'accounts:login' %}" class="btn btn-primary">LOGIN</a>
+                  </div>
+                </div>
+
+          </div>
+        </div>
 </main>
 {% endblock%}

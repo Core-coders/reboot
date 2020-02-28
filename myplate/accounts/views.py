@@ -7,24 +7,25 @@ def test_view(request):
     return render(request,'accounts/test')
 
 def test2_view(request):
-    return render(request,'test2.html')
+    return render(request,'accounts/test2.html')
 
 def test3_view(request):
-    return render(request,'test3.html')   
+    return render(request,'accounts/test3.html')   
 
 def login_view(request):
     if request.method == 'POST':
         form = AuthenticationForm(data=request.POST)
         if form.is_valid():
             user = form.get_user()
-            if str(form.get_user()) >= 'HO':
+            if str(form.get_user()) == 'HO':
                 login(request,user)
                 return render(request,'accounts/test.html')
-            elif str(form.get_user()) >= 'HM':
+            elif str(form.get_user()) == 'HM':
                 login(request,user)
                 return render(request,'accounts/test2.html')
-            elif str(form.get_user()) >= 'NF':
+            elif str(form.get_user()) == 'NF':
                 login(request,user)
+                #return HttpResponse(user)
                 return render(request,'accounts/test3.html')
             else:
                 return HttpResponse('better luck next time')
@@ -36,4 +37,4 @@ def login_view(request):
 def logout_view(request):
     if request.method == 'POST':
         logout(request)
-        return redirect('account:login')
+        return redirect('http://127.0.0.1:8000')
