@@ -7,7 +7,9 @@ from .models import Hmdetails,Studentdetails
 
 
 def test2_view(request):
+    schooldetail = Studentdetails.objects.get(slug=slug)
     return render(request,'accounts/test2.html')
+
   
 
 def login_view(request):
@@ -16,11 +18,11 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             hmdetails = Hmdetails.objects.get(hmid=str(user))
-            schooldetails = Studentdetails.objects.get(Schoolid=str(hmdetails.schoolid))
+            schooldetails = Studentdetails.objects.filter(Schoolid=str(hmdetails.schoolid))
             if str(user) == str(hmdetails):
                 login(request,user)
                 return render(request,'accounts/test2.html',{'hmdetails':hmdetails,'schooldetails':schooldetails})
-                #schooldetail = Studentdetails.objects.raw('select * from accounts_Studentdetails,accounts_Hmdetails where accounts_Studentdetails.Schoolid = accounts_Hmdetails.schoolid')
+                # schooldetail = Studentdetails.objects.raw('select * from accounts_Studentdetails,accounts_Hmdetails where accounts_Studentdetails.Schoolid = accounts_Hmdetails.schoolid')
 
     else:
         form = AuthenticationForm()

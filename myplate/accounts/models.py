@@ -15,6 +15,7 @@ class Studentdetails(models.Model):
     Schoolid = models.IntegerField(default=0)
     dob = models.DateTimeField()
     aadhar = models.IntegerField()
+    slug = models.SlugField(default="test")
     def __str__(self):
         return self.name
         
