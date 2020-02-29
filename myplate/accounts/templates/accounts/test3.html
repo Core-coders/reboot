@@ -2,9 +2,13 @@
 {% load static from staticfiles %}
 {% block content %}
 </div>
+<!------------------------------------------------------------------------------
+
+                                      Noon Feeding Committee Login Card
+        ------------------------------------------------------------------------------ -->
 <div class="row">
   <div class="col-3 card  shadow-sm" style="margin: 5%;padding: 3%;padding-left: 5%;">
-      <h5><b>Welcome Noon Feeding Commitee</b></h5>
+      <h5><b>Welcome Noon Feeding Commitee Officer</b></h5>
           <img src="{%static 'hm.png'%}" alt="" style="height: 100px;width: 100px;margin-left: 10%;margin-top: 10%;"> <br>
           <h5  style="padding-top: 5%;"> {{hmdetails.hmname}}</h5> 
           <h6  style="padding-top: 5%;"><b>School:</b> <br>
@@ -19,31 +23,43 @@
     {% endif %}
              
   </div>
+  <!------------------------------------------------------------------------------
+
+                                      Menu Approval Card
+        ------------------------------------------------------------------------------ -->
   <div class="col-2 card  shadow-sm" style="margin-top:10%;height: 200px;">
       <center>
-          <img src="{%static 'health.png'%}" alt="" style="height: 50px;width: 50px;margin-top: 30px;">
+          <img src="{%static 'test.png'%}" alt="" style="height: 50px;width: 50px;margin-top: 30px;">
       </center>
-     <h5 align="center"style="padding-top: 5%;">Medical Report</h5>
+     <h5 align="center"style="padding-top: 5%;">Menu Approval</h5>
      <center>
-      <a href="#report"><button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">View Report</button></a>
+      <a href="{% url 'accounts:render' %}"><button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">See Menu</button></a>
      </center>
   </div>
+  <!------------------------------------------------------------------------------
+
+                                      Weekly Survey Card
+        ------------------------------------------------------------------------------ -->
   <div class="col-2 card  shadow-sm" style="margin-top:10%;margin-left: 2%;height: 200px;">
       <center>
-          <img src="{%static 'food.png'%}" alt="" style="height: 50px;width: 50px;margin-top: 30px;">
+          <img src="{%static 'survey.png'%}" alt="" style="height: 50px;width: 50px;margin-top: 30px;">
       </center>
-     <h5 align="center" style="padding-top: 5%;">Diet Plan</h5>
+     <h5 align="center" style="padding-top: 5%;">Weekly Survey</h5>
      <center>
-      <a href="{% url 'accounts:menu' %}"><button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">Prepare Diet</button></a>
+      <a href="#"><button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">Start Survey</button></a>
      </center>
   </div>
+ <!------------------------------------------------------------------------------
+
+                                      Medical Report Card
+        ------------------------------------------------------------------------------ -->
   <div class="col-2 card  shadow-sm" style="margin-top:10%;margin-left: 2%;height: 200px;">
       <center>
           <img src="{%static 'money.png'%}" alt="" style="height: 50px;width: 50px;margin-top: 30px;">
       </center>
-     <h5 align="center"style="padding-top: 5%;">Billing</h5>
+     <h5 align="center"style="padding-top: 5%;">Send</h5>
      <center>
-       <a href="{% url 'accounts:billgen' %}"><button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">Update bill</button></a>
+       <a href="{% url 'accounts:billgen' %}"><button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">Upload Menu</button></a>
       
      </center>
   </div> 

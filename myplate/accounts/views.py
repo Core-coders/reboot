@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth import login,logout
 from django.http import HttpResponse
-from .models import Hmdetails,Studentdetails
+from .models import Hmdetails,Studentdetails,Menu
 from . import forms
 
 
@@ -18,8 +18,22 @@ def test1_view(request):
 def test3_view(request):
     return render(request,'accounts/test3.html')
 
+def render_view(request):
+    menus = Menu.objects.all()
+    # return HttpResponse(menu)
+    menu = Menu.objects.filter()
+    return render(request,'accounts/rendermenu.html',{'menus':menus})
+
 def dietplan_view(request):
-    return render(request,'accounts/dietplan.html')
+    if request.method == 'POST':
+        form = forms.Menu(request.POST)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.save()
+            return redirect('accounts:dietplan')
+    else:
+        form = forms.Menu() 
+    return render(request,'accounts/dietplan.html',{'form':form})
 
 def billgen_view(request):
      if request.method == 'POST':
@@ -32,8 +46,8 @@ def billgen_view(request):
         form = forms.CreateArticles() 
      return render(request,'accounts/billgen.html',{'form':form})
 
-def menu_view(request):
-    return render(request,'accounts/menu.html')
+def stock_view(request):
+    return render(request,'accounts/stock.html')
 
 def login_view(request):
     if request.method == 'POST':
@@ -51,7 +65,7 @@ def login_view(request):
             # condition for noon feeding commit login
             elif str(form.get_user()) == 'NF':
                 login(request,user)
-                return render(request,'accounts/test1.html')
+                return render(request,'accounts/test3.html')
             
             elif str(form.get_user()) == 'HO':
                 login(request,user)

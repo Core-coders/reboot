@@ -1,0 +1,23 @@
+{% extends 'base_layout.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<table>
+    <tr>
+        <td>DAY</td>
+        <td>Dish1</td>
+        <td>Dish2</td>
+        <td>Dish3</td>
+        <td>Dish4</td>
+    </tr>
+
+    {% for menu in menus%}
+    <tr>
+        <td>{{menu.day}}</td>
+        <td>{{menu.dish1}}</td>
+        <td>{{menu.dish2}}</td>
+        <td>{{menu.dish3}}</td>
+        <td>{{menu.dish4}}</td>
+    </tr>
+    {%endfor%}    
+</table>
+{%endblock%}

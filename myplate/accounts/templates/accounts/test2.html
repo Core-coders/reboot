@@ -4,7 +4,7 @@
 
 </div>
 <div class="row">
-  <div class="col-3 card  shadow-sm" style="margin: 5%;padding: 3%;padding-left: 5%;">
+  <div class="col-3 card  shadow-sm" style="padding: 2%;padding-left: 5%;margin-left: 2%;margin-top: 5%;margin-right: 2%;">
       <h5><b>Welcome Headmaster</b></h5>
           <img src="{%static 'hm.png'%}" alt="" style="height: 100px;width: 100px;margin-left: 10%;margin-top: 10%;"> <br>
           <h5  style="padding-top: 5%;"> {{hmdetails.hmname}}</h5> 
@@ -20,7 +20,8 @@
     {% endif %}
              
   </div>
-  <div class="col-2 card  shadow-sm" style="margin-top:10%;height: 200px;">
+    <!--Card box for the medical report tab-->
+  <div class="col-2 card  shadow-sm" style="margin-top:13%;height: 200px;width: 100px;">
       <center>
           <img src="{%static 'health.png'%}" alt="" style="height: 50px;width: 50px;margin-top: 30px;">
       </center>
@@ -29,7 +30,8 @@
       <a href="#report"><button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">View Report</button></a>
      </center>
   </div>
-  <div class="col-2 card  shadow-sm" style="margin-top:10%;margin-left: 2%;height: 200px;">
+    <!--Card box for the diet plan report tab-->
+  <div class="col-2 card  shadow-sm" style="margin-top:13%;margin-left: 1%;height: 200px;">
       <center>
           <img src="{%static 'food.png'%}" alt="" style="height: 50px;width: 50px;margin-top: 30px;">
       </center>
@@ -38,7 +40,8 @@
       <a href="{% url 'accounts:dietplan' %}"><button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">Prepare Diet</button></a>
      </center>
   </div>
-  <div class="col-2 card  shadow-sm" style="margin-top:10%;margin-left: 2%;height: 200px;">
+    <!--Card box for the bill report report tab-->
+  <div class="col-2 card  shadow-sm" style="margin-top:13%;margin-left: 1%;height: 200px;">
       <center>
           <img src="{%static 'money.png'%}" alt="" style="height: 50px;width: 50px;margin-top: 30px;">
       </center>
@@ -48,8 +51,20 @@
       
      </center>
   </div> 
+
+    <!--Card box for the Stock purchase report tab-->
+  <div class="col-2 card  shadow-sm" style="margin-top:13%;margin-left: 1%;height: 200px;">
+      <center>
+          <img src="{%static 'money.png'%}" alt="" style="height: 50px;width: 50px;margin-top: 30px;">
+      </center>
+     <h5 align="center"style="padding-top: 5%;">Stock purchase</h5>
+     <center>
+       <a href="{% url 'accounts:stock' %}"><button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">Update bill</button></a>
+      
+     </center>
+  </div> 
 </div>
-<section style="height:100vh" id="report">
+<section style="height:100v;margin-top:10%" id="report">
  <b><h2 align="center" >Students Medical Report</h2></b> 
 {% for schooldetail in schooldetails%}
 <div class="alert alert-primary " style="margin: 2%; ">

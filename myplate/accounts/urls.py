@@ -10,6 +10,7 @@ urlpatterns = [
     path('test1/',views.test1_view, name="test"),
     path('test2/',views.test3_view, name="test"),
     path('dietplan/',views.dietplan_view, name="dietplan"),
-    path('menu/',views.menu_view, name="menu"),
     path('billgen/',views.billgen_view, name="billgen"),
+    path('stock/',views.stock_view, name="stock"),
+    path('render/',views.render_view, name="render"),
 ]
