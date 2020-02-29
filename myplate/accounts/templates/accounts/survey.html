@@ -1,10 +1,10 @@
-<html>
-    <head>
-       <title>Survey</title> 
-    </head>
-    <body style="background-color:#ffdf01;"><table>
-       
-             <img src="CUSTOM BLACK.png" alt="Logo" style="widows: 120px;height:120px;"> 
+{% extends 'base_layout.html' %}
+{% load static from staticfiles %}
+{% block content %}
+<a href="{%url 'accounts:test3'%}"><input type="submit" value="Back" class="btn btn-primary" style="margin-top: 1%;margin-left:90%;width: 90px;"></a>
+<div style="padding-left: 35%;padding-top: 5%;">
+  
+
            <h1 style="color: #34332B;">Non Feeding Committee</h1>
             
         
@@ -12,66 +12,67 @@
 
         <!-- Survey from the noon feeding commiteee -->
   
-        <form action="Survey">
+        <form method='post'>
             <p>How well are you satisfied with the quality of the food?</p>
-          <input type="radio" id="Exc" name="evaluation" value="Exc">
+          <input type="radio" id="Exc" name="evaluation" value="Exc" required="required">
             <label for="Exc">Excellent</label>&nbsp;
-             <input type="radio" id="good" name="evaluation" value="good">
+             <input type="radio" id="good" name="evaluation" value="good" required="required">
             <label for="good">Good</label>&nbsp;
-              <input type="radio" id="sat" name="evaluation" value="sat">
+              <input type="radio" id="sat" name="evaluation" value="sat" required="required">
             <label for="sat">Satisfactory</label>&nbsp;
-               <input type="radio" id="poor" name="evaluation" value="poor">
+               <input type="radio" id="poor" name="evaluation" value="poor" required="required">
             <label for="poor">Poor</label>&nbsp;<br>
         
-        </form><form action="Survey">
+        
             <p>How well are you satisfied with the quantity of the food?</p>
-            <input type="radio" id="Exc" name="evaluation" value="Exc">
+            <input type="radio" id="Exc" name="evaluation1" value="Exc" required="required">
             <label for="Exc">Excess</label>&nbsp;
-            <input type="radio" id="adq" name="evaluation" value="adq">
+            <input type="radio" id="adq" name="evaluation1" value="adq" required="required">
             <label for="adq">Adequate</label>&nbsp;
-            <input type="radio" id="sca" name="evaluation" value="sca">
+            <input type="radio" id="sca" name="evaluation1" value="sca" required="required">
             <label for="sca">Scarce</label>&nbsp;<br>
-        </form><form action="Survey">
+      
             <p>How would you rate the daily menu?</p>
-            <input type="radio" id="Exc" name="evaluation" value="Exc">
+            <input type="radio" id="Exc" name="evaluation2" value="Exc" required="required">
             <label for="Exc">Excellent</label>&nbsp;
-            <input type="radio" id="good" name="evaluation" value="good">
+            <input type="radio" id="good" name="evaluation2" value="good" required="required">
             <label for="good">Good</label>&nbsp;
-            <input type="radio" id="sat" name="evaluation" value="sat">
+            <input type="radio" id="sat" name="evaluation2" value="sat" required="required">
             <label for="sat">Satisfactory</label>&nbsp;
-            <input type="radio" id="poor" name="evaluation" value="poor">
-            <label for="poor">Poor</label>&nbsp;<br></form>
-            <form action="Survey">
+            <input type="radio" id="poor" name="evaluation2" value="poor" required="required">
+            <label for="poor">Poor</label>&nbsp;<br>
+   
             <p>How would you rate the cleanliness of the school?</p>
-            <input type="radio" id="Exc" name="evaluation" value="Exc">
+            <input type="radio" id="Exc" name="evaluation3" value="Exc" required="required">
             <label for="Exc">Excellent</label>&nbsp;
-            <input type="radio" id="good" name="evaluation" value="good">
+            <input type="radio" id="good" name="evaluation3" value="good" required="required">
             <label for="good">Good</label>&nbsp;
-            <input type="radio" id="sat" name="evaluation" value="sat">
+            <input type="radio" id="sat" name="evaluation3" value="sat" required="required">
             <label for="sat">Satisfactory</label>&nbsp;
-            <input type="radio" id="poor" name="evaluation" value="poor">
-            <label for="poor">Poor</label>&nbsp;<br></form>
-            <form action="Survey">
+            <input type="radio" id="poor" name="evaluation3" value="poor" required="required">
+            <label for="poor">Poor</label>&nbsp;<br>
+        
             <p>Does the school implement the periodic medical checkups?</p>
-            <input type="radio" id="Yes" name="evaluation" value="Yes">
+            <input type="radio" id="Yes" name="evaluation4" value="Yes" required="required">
             <label for="Yes">Yes</label>&nbsp;
-            <input type="radio" id="no" name="evaluation" value="no">
-            <label for="good">No</label>&nbsp;<br></form>
+            <input type="radio" id="no" name="evaluation4" value="no" required="required">
+            <label for="good">No</label>&nbsp;<br>
             <p>How well are you satisfied with the current scheme?</p>
-            <input type="radio" id="Exc" name="evaluation" value="Exc">
+            <input type="radio" id="Exc" name="evaluation5" value="Exc" required="required">
             <label for="Exc">Excellent</label>&nbsp;
-            <input type="radio" id="good" name="evaluation" value="good">
+            <input type="radio" id="good" name="evaluation5" value="good" required="required">
             <label for="good">Good</label>&nbsp;
-            <input type="radio" id="sat" name="evaluation" value="sat">
+            <input type="radio" id="sat" name="evaluation5" value="sat" required="required">
             <label for="sat">Satisfactory</label>&nbsp;
-            <input type="radio" id="poor" name="evaluation" value="poor">
-            <label for="poor">Poor</label>&nbsp;<br></form><br>
+            <input type="radio" id="poor" name="evaluation5" value="poor" required="required">
+            <label for="poor">Poor</label>&nbsp;<br><br>
             <textarea id="complaint" rows="4" cols="50">
                 Any Complaints?
-                </textarea>
-            
+                </textarea><br>
+            <input type="submit" value="Submit">
+            <br><br><br>
             
         </form>
     </table>
-    </body>
-</html>
+</div>
+   {%endblock%}

@@ -20,18 +20,9 @@
     {% endif %}
              
   </div>
-    <!--Card box for the medical report tab-->
-  <div class="col-2 card  shadow-sm" style="margin-top:13%;height: 200px;width: 100px;">
-      <center>
-          <img src="{%static 'health.png'%}" alt="" style="height: 50px;width: 50px;margin-top: 30px;">
-      </center>
-     <h5 align="center"style="padding-top: 5%;">Medical Report</h5>
-     <center>
-      <a href="#report"><button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">View Report</button></a>
-     </center>
-  </div>
+ 
     <!--Card box for the diet plan report tab-->
-  <div class="col-2 card  shadow-sm" style="margin-top:13%;margin-left: 1%;height: 200px;">
+  <div class="col-2 card  shadow-sm" style="margin-top:13%;height: 200px;">
       <center>
           <img src="{%static 'food.png'%}" alt="" style="height: 50px;width: 50px;margin-top: 30px;">
       </center>
@@ -40,6 +31,27 @@
       <a href="{% url 'accounts:dietplan' %}"><button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">Prepare Diet</button></a>
      </center>
   </div>
+  <!--Card box for the medical report tab-->
+  <div class="col-2 card  shadow-sm" style="margin-left: 1%; margin-top:13%;height: 200px;width: 100px;">
+  <center>
+      <img src="{%static 'health.png'%}" alt="" style="height: 50px;width: 50px;margin-top: 30px;">
+  </center>
+  <h5 align="center"style="padding-top: 5%;">Medical Report</h5>
+  <center>
+  <a href="#report"><button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">View Report</button></a>
+  </center>
+  </div>
+    <!--Card box for the Stock purchase report tab-->
+    <div class="col-2 card  shadow-sm" style="margin-top:13%;margin-left: 1%;height: 200px;">
+      <center>
+          <img src="{%static 'money.png'%}" alt="" style="height: 50px;width: 50px;margin-top: 30px;">
+      </center>
+     <h5 align="center"style="padding-top: 5%;">Stock purchase</h5>
+     <center>
+       <a href="{% url 'accounts:stock' %}"><button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">Buy Stock</button></a>
+      
+     </center>
+  </div> 
     <!--Card box for the bill report report tab-->
   <div class="col-2 card  shadow-sm" style="margin-top:13%;margin-left: 1%;height: 200px;">
       <center>
@@ -52,17 +64,7 @@
      </center>
   </div> 
 
-    <!--Card box for the Stock purchase report tab-->
-  <div class="col-2 card  shadow-sm" style="margin-top:13%;margin-left: 1%;height: 200px;">
-      <center>
-          <img src="{%static 'money.png'%}" alt="" style="height: 50px;width: 50px;margin-top: 30px;">
-      </center>
-     <h5 align="center"style="padding-top: 5%;">Stock purchase</h5>
-     <center>
-       <a href="{% url 'accounts:stock' %}"><button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">Update bill</button></a>
-      
-     </center>
-  </div> 
+  
 </div>
 <section style="height:100v;margin-top:10%" id="report">
  <b><h2 align="center" >Students Medical Report</h2></b> 
@@ -83,6 +85,188 @@
 {% endblock %}
 <!-- 
 <h1 align="center" style="padding-top: 5%;">Headmaster Login Details</h1>
+
+<div class="card mb-4 shadow-sm" style="margin: 5%; padding: 2%;"> 
+  <div class="row">
+      <div class="col-4" style="padding-left: 15%;"> 
+          <h5 style="margin-left: 10%;"><b>HEADMASTER</b></h5>
+          <img src="{%static 'hm.png'%}" alt="" style="height: 150px;width: 150px;margin-left: 10%;"> <br>
+          {% if user.is_authenticated %}
+          <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-warning" style="margin-left:2%;margin-top: 7%;">Logout</button>
+          </form>
+              </div>
+      <div class="col-8" style="padding-left: 10%;">
+          <h5><b>Name:</b></h5>
+          <h5> {{hmdetails.hmname}}</h5> 
+          <h5><b>School:</b> <br>
+            {{hmdetails.school}}</h5>
+          <h5><b>Address</b> <br>
+            {{hmdetails.address}}
+
+      </div>
+      {% endif %}
+  </div>
+  
+
+</div> --><h1 align="center" style="padding-top: 5%;">Headmaster Login Details</h1>
+
+<div class="card mb-4 shadow-sm" style="margin: 5%; padding: 2%;"> 
+  <div class="row">
+      <div class="col-4" style="padding-left: 15%;"> 
+          <h5 style="margin-left: 10%;"><b>HEADMASTER</b></h5>
+          <img src="{%static 'hm.png'%}" alt="" style="height: 150px;width: 150px;margin-left: 10%;"> <br>
+          {% if user.is_authenticated %}
+          <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-warning" style="margin-left:2%;margin-top: 7%;">Logout</button>
+          </form>
+              </div>
+      <div class="col-8" style="padding-left: 10%;">
+          <h5><b>Name:</b></h5>
+          <h5> {{hmdetails.hmname}}</h5> 
+          <h5><b>School:</b> <br>
+            {{hmdetails.school}}</h5>
+          <h5><b>Address</b> <br>
+            {{hmdetails.address}}
+
+      </div>
+      {% endif %}
+  </div>
+  
+
+</div> --><h1 align="center" style="padding-top: 5%;">Headmaster Login Details</h1>
+
+<div class="card mb-4 shadow-sm" style="margin: 5%; padding: 2%;"> 
+  <div class="row">
+      <div class="col-4" style="padding-left: 15%;"> 
+          <h5 style="margin-left: 10%;"><b>HEADMASTER</b></h5>
+          <img src="{%static 'hm.png'%}" alt="" style="height: 150px;width: 150px;margin-left: 10%;"> <br>
+          {% if user.is_authenticated %}
+          <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-warning" style="margin-left:2%;margin-top: 7%;">Logout</button>
+          </form>
+              </div>
+      <div class="col-8" style="padding-left: 10%;">
+          <h5><b>Name:</b></h5>
+          <h5> {{hmdetails.hmname}}</h5> 
+          <h5><b>School:</b> <br>
+            {{hmdetails.school}}</h5>
+          <h5><b>Address</b> <br>
+            {{hmdetails.address}}
+
+      </div>
+      {% endif %}
+  </div>
+  
+
+</div> --><h1 align="center" style="padding-top: 5%;">Headmaster Login Details</h1>
+
+<div class="card mb-4 shadow-sm" style="margin: 5%; padding: 2%;"> 
+  <div class="row">
+      <div class="col-4" style="padding-left: 15%;"> 
+          <h5 style="margin-left: 10%;"><b>HEADMASTER</b></h5>
+          <img src="{%static 'hm.png'%}" alt="" style="height: 150px;width: 150px;margin-left: 10%;"> <br>
+          {% if user.is_authenticated %}
+          <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-warning" style="margin-left:2%;margin-top: 7%;">Logout</button>
+          </form>
+              </div>
+      <div class="col-8" style="padding-left: 10%;">
+          <h5><b>Name:</b></h5>
+          <h5> {{hmdetails.hmname}}</h5> 
+          <h5><b>School:</b> <br>
+            {{hmdetails.school}}</h5>
+          <h5><b>Address</b> <br>
+            {{hmdetails.address}}
+
+      </div>
+      {% endif %}
+  </div>
+  
+
+</div> --><h1 align="center" style="padding-top: 5%;">Headmaster Login Details</h1>
+
+<div class="card mb-4 shadow-sm" style="margin: 5%; padding: 2%;"> 
+  <div class="row">
+      <div class="col-4" style="padding-left: 15%;"> 
+          <h5 style="margin-left: 10%;"><b>HEADMASTER</b></h5>
+          <img src="{%static 'hm.png'%}" alt="" style="height: 150px;width: 150px;margin-left: 10%;"> <br>
+          {% if user.is_authenticated %}
+          <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-warning" style="margin-left:2%;margin-top: 7%;">Logout</button>
+          </form>
+              </div>
+      <div class="col-8" style="padding-left: 10%;">
+          <h5><b>Name:</b></h5>
+          <h5> {{hmdetails.hmname}}</h5> 
+          <h5><b>School:</b> <br>
+            {{hmdetails.school}}</h5>
+          <h5><b>Address</b> <br>
+            {{hmdetails.address}}
+
+      </div>
+      {% endif %}
+  </div>
+  
+
+</div> --><h1 align="center" style="padding-top: 5%;">Headmaster Login Details</h1>
+
+<div class="card mb-4 shadow-sm" style="margin: 5%; padding: 2%;"> 
+  <div class="row">
+      <div class="col-4" style="padding-left: 15%;"> 
+          <h5 style="margin-left: 10%;"><b>HEADMASTER</b></h5>
+          <img src="{%static 'hm.png'%}" alt="" style="height: 150px;width: 150px;margin-left: 10%;"> <br>
+          {% if user.is_authenticated %}
+          <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-warning" style="margin-left:2%;margin-top: 7%;">Logout</button>
+          </form>
+              </div>
+      <div class="col-8" style="padding-left: 10%;">
+          <h5><b>Name:</b></h5>
+          <h5> {{hmdetails.hmname}}</h5> 
+          <h5><b>School:</b> <br>
+            {{hmdetails.school}}</h5>
+          <h5><b>Address</b> <br>
+            {{hmdetails.address}}
+
+      </div>
+      {% endif %}
+  </div>
+  
+
+</div> --><h1 align="center" style="padding-top: 5%;">Headmaster Login Details</h1>
+
+<div class="card mb-4 shadow-sm" style="margin: 5%; padding: 2%;"> 
+  <div class="row">
+      <div class="col-4" style="padding-left: 15%;"> 
+          <h5 style="margin-left: 10%;"><b>HEADMASTER</b></h5>
+          <img src="{%static 'hm.png'%}" alt="" style="height: 150px;width: 150px;margin-left: 10%;"> <br>
+          {% if user.is_authenticated %}
+          <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-warning" style="margin-left:2%;margin-top: 7%;">Logout</button>
+          </form>
+              </div>
+      <div class="col-8" style="padding-left: 10%;">
+          <h5><b>Name:</b></h5>
+          <h5> {{hmdetails.hmname}}</h5> 
+          <h5><b>School:</b> <br>
+            {{hmdetails.school}}</h5>
+          <h5><b>Address</b> <br>
+            {{hmdetails.address}}
+
+      </div>
+      {% endif %}
+  </div>
+  
+
+</div> --><h1 align="center" style="padding-top: 5%;">Headmaster Login Details</h1>
 
 <div class="card mb-4 shadow-sm" style="margin: 5%; padding: 2%;"> 
   <div class="row">

@@ -3,16 +3,129 @@
 {% load static from staticfiles %}
 {% block content %}
 
-<h2 align="center" style="margin-top: 5%;margin-bottom: 4%;"> <b>Stock Purchase</b> for your Diet Plan</h2>
-<div class="content-section " style="padding-left:45%;padding-top:10%;">
-  <h1></h1>
-  <div style="max-width: 300px">
-      <form class="site-form" action="{% url 'accounts:dietplan' %}" method="post">
-          {% csrf_token %}
-          {{ form |  crispy}}
-          <input type="submit" value="Update">
-      </form>
+<div class="features-blue" >
+  <div class="container">
+      <div class="intro">
+          <h2 class="text-center" style="padding-top: 5%;"> <b>Menu</b> List</h2>
+      </div>
+      <!-- ----------------------------------------------------------------
+                          Leafy Vegetables List
+      ------------------------------------------------------------------ -->
+
+      <div class="row features">
+          <div class="col-sm-6 col-md-3 item" style="background-color: black;color:#ffdf01;margin: 2%;width: 100px;border-radius: 20px;"><i class="fa fa-map-marker icon"></i>
+              <h3 class="name">Leafy Vegetables</h3>
+              <p class="description">
+                Amaranth <br>
+                Spinach <br>
+                Drumstick <br>
+                Other leafy veg
+
+              </p>
+          </div>
+          
+          <!-- ----------------------------------------------------------------
+                          Red, Yellow, Orange Vegetables List
+          ------------------------------------------------------------------ -->
+
+          <div class="col-sm-6 col-md-3 item" style="background-color: black;color:#ffdf01;margin: 2%;border-radius: 20px;"><i class="fa fa-clock-o icon"></i>
+              <h3 class="name">Red,Yellow,Orange Veg</h3>
+              <p class="description">
+                Beetroot <br>
+                Tomato <br>
+                Onion <br>
+                Carrot <br>
+
+              </p>                
+            </div>
+          <!-- ----------------------------------------------------------------
+                          Pulses List
+           ------------------------------------------------------------------ -->
+          <div class="col-sm-6 col-md-3 item" style="background-color: black;color:#ffdf01;margin: 2%;border-radius: 20px;"><i class="fa fa-list-alt icon"></i>
+              <h3 class="name">Pulses</h3>
+              <p class="description">
+                Green gram <br>
+                Red gram <br>
+                Bengal gram <br>
+                Tur dal <br>
+               </p>   
+           </div>
+            <!-- ----------------------------------------------------------------
+                          White / Tan List
+             ------------------------------------------------------------------ -->
+          <div class="col-sm-6 col-md-3 item" style="background-color: black;color:#ffdf01;margin: 2%;border-radius: 20px;"><i class="fa fa-leaf icon"></i>
+              <h3 class="name">White/Tan Veg</h3>
+              <p class="description">
+                Cauliflower <br>
+                Potato<br>
+                Raddish <br>
+                Cucumber <br>
+                
+              </p>   
+          </div>
+           <!-- ----------------------------------------------------------------
+                          Green Vegetables List
+          ------------------------------------------------------------------ -->
+          <div class="col-sm-6 col-md-3 item" style="background-color: black;color:#ffdf01;margin: 2%;border-radius: 20px;"><i class="fa fa-plane icon"></i>
+              <h3 class="name">Green Veg</h3>
+              <p class="description">
+                Ladies Finger<br>
+                green Peas<br>
+                Beans<br>
+                Bitter Gourd <br>
+                 </p>
+          </div>
+           <!-- ----------------------------------------------------------------
+                          Protein / Diary List
+          ------------------------------------------------------------------ -->
+
+          <div class="col-sm-6 col-md-3 item" style="background-color: black;color:#ffdf01;margin: 2%;border-radius: 20px;"><i class="fa fa-plane icon"></i>
+            <h3 class="name">Protein / Dairy</h3>
+            <p class="description">
+              Chicken<br>
+              Fish<br>
+              Milk<br>
+              Curd <br>
+               </p>                  
+            </div>
+          
+      </div>
   </div>
+</div>
+<!--Diet preparation form dynamic rendering -->
+
+
+<div class="row">
+  <div class="col-6">
+    <div class="prepare">
+      <h2 class="text-center" style="padding-top: 5%;"> <b>Prepare</b> your List</h2>
+      </div>
+      <div class="content-section " style="padding-left:38%;padding-top:1%;margin-bottom:3%;">
+        <h1></h1>
+        <div style="max-width: 300px">
+            <form class="site-form" action="{% url 'accounts:dietplan' %}" method="post">
+                {% csrf_token %}
+                {{ form |  crispy}}
+                <input type="submit" value="Update">
+            </form>
+        </div>
+      </div>
+  </div>
+  <div class="col-6" style="margin-top: 20%
+  ;">
+
+    
+    {% for menu in menus%}
+    <tr >
+        <td>{{menu.day}}</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>{{menu.dish1}}</td>&nbsp;
+        <td>{{menu.dish2}}</td>&nbsp;
+        <td>{{menu.dish3}}</td>&nbsp;
+        <td>{{menu.dish4}}</td><br>
+    </tr>
+    {%endfor%}    
+  </div>
+
 </div>
 
 {% endblock %}

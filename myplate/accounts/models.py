@@ -42,5 +42,6 @@ class Menu(models.Model):
     dish2 = models.CharField(max_length=50)
     dish3 = models.CharField(max_length=50)
     dish4 = models.CharField(max_length=50)
+    date = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.day

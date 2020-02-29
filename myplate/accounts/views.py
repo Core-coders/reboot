@@ -5,18 +5,24 @@ from django.http import HttpResponse
 from .models import Hmdetails,Studentdetails,Menu
 from . import forms
 
+#renders NF page
+def test1_view(request):
+    return render(request,'accounts/test1.html')
 
 #renders HM page
 def test2_view(request):
     return render(request,'accounts/test2.html')
 
-#renders NF page
-def test1_view(request):
-    return render(request,'accounts/test1.html')
-
 #renders HO page
 def test3_view(request):
     return render(request,'accounts/test3.html')
+
+def delete_view(request):
+    Menu.objects.all().delete()
+    return render(request,'accounts/rendermenu.html')
+
+def survey_view(request):
+    return render(request,'accounts/survey.html')
 
 def render_view(request):
     menus = Menu.objects.all()
@@ -33,7 +39,9 @@ def dietplan_view(request):
             return redirect('accounts:dietplan')
     else:
         form = forms.Menu() 
-    return render(request,'accounts/dietplan.html',{'form':form})
+    menus = Menu.objects.all()
+    menu = Menu.objects.filter()
+    return render(request,'accounts/dietplan.html',{'form':form,'menus':menus})
 
 def billgen_view(request):
      if request.method == 'POST':
@@ -69,7 +77,7 @@ def login_view(request):
             
             elif str(form.get_user()) == 'HO':
                 login(request,user)
-                return render(request,'accounts/test3.html')
+                return render(request,'accounts/test1.html')
 
     else:
         form = AuthenticationForm()
