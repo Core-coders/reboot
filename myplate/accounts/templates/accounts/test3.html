@@ -1,11 +1,10 @@
 {% extends 'base_layout.html' %}
 {% load static from staticfiles %}
 {% block content %}
-
 </div>
 <div class="row">
   <div class="col-3 card  shadow-sm" style="margin: 5%;padding: 3%;padding-left: 5%;">
-      <h5><b>Welcome Headmaster</b></h5>
+      <h5><b>Welcome Noon Feeding Commitee</b></h5>
           <img src="{%static 'hm.png'%}" alt="" style="height: 100px;width: 100px;margin-left: 10%;margin-top: 10%;"> <br>
           <h5  style="padding-top: 5%;"> {{hmdetails.hmname}}</h5> 
           <h6  style="padding-top: 5%;"><b>School:</b> <br>
@@ -35,7 +34,7 @@
       </center>
      <h5 align="center" style="padding-top: 5%;">Diet Plan</h5>
      <center>
-      <a href="{% url 'accounts:dietplan' %}"><button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">Prepare Diet</button></a>
+      <a href="{% url 'accounts:menu' %}"><button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">Prepare Diet</button></a>
      </center>
   </div>
   <div class="col-2 card  shadow-sm" style="margin-top:10%;margin-left: 2%;height: 200px;">
@@ -49,48 +48,5 @@
      </center>
   </div> 
 </div>
-<section style="height:100vh" id="report">
- <b><h2 align="center" >Students Medical Report</h2></b> 
-{% for schooldetail in schooldetails%}
-<div class="alert alert-primary " style="margin: 2%; ">
-  <h5>{{schooldetail.name}}</h5> 
-  <p><b>School Code: </b> {{schooldetail.Schoolid}} &nbsp; &nbsp; &nbsp;
-  <b>Blood Group: </b> {{schooldetail.bloodgroup}}&nbsp; &nbsp; &nbsp;
-  <b>DOB: </b> {{schooldetail.dob}}&nbsp; &nbsp; &nbsp;
-  <b>Weight: </b> {{schooldetail.weight}}&nbsp; &nbsp; &nbsp;
-  <b>Height: </b> {{schooldetail.height}}&nbsp; &nbsp; &nbsp;
-  <b>BMI:</b>{{schooldetail.bmi}}&nbsp; &nbsp; &nbsp;
-  <b>Status: </b>{{schooldetail.status}}
-</p>
-</div>
-{% endfor %}
-</section>
-{% endblock %}
-<!-- 
-<h1 align="center" style="padding-top: 5%;">Headmaster Login Details</h1>
 
-<div class="card mb-4 shadow-sm" style="margin: 5%; padding: 2%;"> 
-  <div class="row">
-      <div class="col-4" style="padding-left: 15%;"> 
-          <h5 style="margin-left: 10%;"><b>HEADMASTER</b></h5>
-          <img src="{%static 'hm.png'%}" alt="" style="height: 150px;width: 150px;margin-left: 10%;"> <br>
-          {% if user.is_authenticated %}
-          <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
-              {% csrf_token %}
-              <button type="submit" class="btn btn-warning" style="margin-left:2%;margin-top: 7%;">Logout</button>
-          </form>
-              </div>
-      <div class="col-8" style="padding-left: 10%;">
-          <h5><b>Name:</b></h5>
-          <h5> {{hmdetails.hmname}}</h5> 
-          <h5><b>School:</b> <br>
-            {{hmdetails.school}}</h5>
-          <h5><b>Address</b> <br>
-            {{hmdetails.address}}
-
-      </div>
-      {% endif %}
-  </div>
-  
-
-</div> -->
+{%endblock %}

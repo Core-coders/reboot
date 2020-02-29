@@ -1,0 +1,41 @@
+{% extends 'base_layout.html' %}
+{% load static from staticfiles %}
+{% block content %}
+
+<div class="row">
+    <div class="col-3 card  shadow-sm" style="margin: 5%;padding: 3%;padding-left: 5%;">
+        <h5><b>Welcome Headmaster</b></h5>
+            <img src="{%static 'hm.png'%}" alt="" style="height: 100px;width: 100px;margin-left: 10%;margin-top: 10%;"> <br>
+            <h5  style="padding-top: 5%;"> {{hmdetails.hmname}}</h5> 
+            
+                {% if user.is_authenticated %}
+          <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-warning" style="margin-top: 5%;margin-left:20%">Logout</button>       
+             </form>
+      {% endif %}
+               
+    </div>
+    <div class="col-4 card  shadow-sm" style="margin-top:10%;height: 300px;">
+        <center>
+            <h3 style="padding-top: 15%;">Upload your bill</h3>
+            <br>
+            <form class="site-form" action="{% url 'accounts:billgen' %}" method="post" enctype="multipart/form-data">
+                <label for="myfile">Select a file:</label>
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Upload" class="btn btn-primary" style="margin-top: 5%;width: 150px;">
+                <!-- <a href=""><button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">Submit</button></a> -->
+            </form>  
+            
+        </center>           
+       
+    </div>
+  </div>
+  <section style="height:100vh">
+    <center>
+    
+    </center>
+</section>
+   
+{% endblock %}

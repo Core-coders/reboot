@@ -1,0 +1,92 @@
+{% extends 'base_layout.html' %}
+{% load static from staticfiles %}
+{% block content %}
+
+<h2 align="center" style="margin-top: 5%;margin-bottom: 4%;"> <b>Stock Purchase</b> for your Diet Plan</h2>
+<p align="center">Place your diet plan to your nearest Supply Co.</p>
+<div class="row" style="margin-left: 10%;">
+    <div class="col-2 card  shadow-sm" style="height: 200px;width: 100px;margin: 2%;">
+        <center><label for="sel1" style="padding-top: 15%;"><b>Leafy Vegetables</b> </label></center>
+        <select class="form-control" id="sel1" name="sellist1" style="margin: 3%;">
+          <option>Amaranth</option>
+          <option>Spinach</option>
+          <option>Drumstick</option>
+          <option>Other leafy veg.</option>
+        </select>
+     </div>
+
+     <div class="col-2 card  shadow-sm" style="height: 200px;width: 100px;margin: 2%;">
+        <center><label for="sel1" style="padding-top: 15%;"><b>Red,Yellow,Orange Vegetables</b> </label></center>
+        <select class="form-control" id="sel1" name="sellist1" style="margin: 3%;">
+          <option>Beetroot</option>
+          <option>Tomato</option>
+          <option>Onion</option>
+          <option>Carrot</option>
+          <option>Pumkin</option>
+
+        </select>
+    </div>
+
+    <div class="col-2 card  shadow-sm" style="height: 200px;width: 100px;margin: 2%;">
+        <center><label for="sel1" style="padding-top: 15%;"><b>Pulses</b> </label></center>
+        <select class="form-control" id="sel1" name="sellist1" style="margin: 3%;">
+          <option>Green gram</option>
+          <option>Red gram</option>
+          <option>Bengal gram</option>
+          <option>Pur dal</option>
+          
+
+        </select>
+    </div>
+
+    <div class="col-2 card  shadow-sm" style="height: 200px;width: 100px;margin: 2%;">
+        <center><label for="sel1" style="padding-top: 15%;"><b>White/Tan Vegetables</b> </label></center>
+        <select class="form-control" id="sel1" name="sellist1" style="margin: 3%;">
+          <option>Cauliflower</option>
+          <option>Potato</option>
+          <option>Raddish</option>
+          <option>Cucumber</option>
+          
+
+        </select>
+    </div>
+
+    <div class="col-2 card  shadow-sm" style="height: 200px;width: 100px;margin: 2%;">
+        <center><label for="sel1" style="padding-top: 15%;"><b>Green Color Veg</b> </label></center>
+        <select class="form-control" id="sel1" name="sellist1" style="margin: 3%;">
+          <option>Ladies finger</option>
+          <option>Green peas</option>
+          <option>Beans</option>
+          <option>Bitter gourd</option>
+        </select>
+    </div>
+
+    <div class="col-2 card  shadow-sm" style="height: 200px;width: 100px;margin: 2%;">
+        <center><label for="sel1" style="padding-top: 15%;"><b>Protiens</b> </label></center>
+        <select class="form-control" id="sel1" name="sellist1" style="margin: 3%;">
+          <option>Chicken</option>
+          <option>Fish</option>
+          <option>Egg</option>
+          <option>Banana</option>
+        </select>
+    </div>
+
+    <div class="col-2 card  shadow-sm" style="height: 200px;width: 100px;margin: 2%;">
+        <center><label for="sel1" style="padding-top: 15%;"><b>Dairy</b> </label></center>
+        <select class="form-control" id="sel1" name="sellist1" style="margin: 3%;">
+          <option>Milk</option>
+          <option>Curd</option>
+        
+        </select>
+    </div>
+    <br>
+    
+</div>
+<div class="footer" style="margin-left: 50%;margin-top: 5%;">
+    <a href="{% url 'accounts:login' %}">    <button type="button" class="btn btn-primary">Place order</button>
+    </a>
+</div>
+
+</div>
+
+{% endblock %}
