@@ -2,6 +2,62 @@
 {% load static from staticfiles %}
 {% block content %}
 
+</div>
+<div class="row">
+  <div class="col-3 card  shadow-sm" style="margin: 5%;padding: 3%;padding-left: 5%;">
+      <h5><b>Welcome Headmaster</b></h5>
+          <img src="{%static 'hm.png'%}" alt="" style="height: 100px;width: 100px;margin-left: 10%;margin-top: 10%;"> <br>
+          <h5  style="padding-top: 5%;"> {{hmdetails.hmname}}</h5> 
+          <h6  style="padding-top: 5%;"><b>School:</b> <br>
+            {{hmdetails.school}}</h6>
+          <h6><b>Address</b> <br>
+            {{hmdetails.address}}</h6>
+              {% if user.is_authenticated %}
+        <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-warning" style="margin-top: 5%;margin-left:20%">Logout</button>       
+           </form>
+    {% endif %}
+             
+  </div>
+  <div class="col-2 card  shadow-sm" style="margin-top: 5%;height: 200px;">
+      <center>
+          <img src="{%static 'health.png'%}" alt="" style="height: 50px;width: 50px;margin-top: 30px;">
+      </center>
+     <h5 align="center"style="padding-top: 5%;">Medical Report</h5>
+     <center>
+      <button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">Get Report</button>
+     </center>
+  </div>
+  <div class="col-2 card  shadow-sm" style="margin-top: 5%;margin-left: 2%;height: 200px;">
+      <center>
+          <img src="{%static 'food.png'%}" alt="" style="height: 50px;width: 50px;margin-top: 30px;">
+      </center>
+     <h5 align="center"style="padding-top: 5%;">Diet Plan</h5>
+     <center>
+      <button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">Prepare Diet</button>
+     </center>
+  </div>
+  <div class="col-2 card  shadow-sm" style="margin-top: 5%;margin-left: 2%;height: 200px;">
+      <center>
+          <img src="{%static 'money.png'%}" alt="" style="height: 50px;width: 50px;margin-top: 30px;">
+      </center>
+     <h5 align="center"style="padding-top: 5%;">Billing</h5>
+     <center>
+      <button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">Update bill</button>
+     </center>
+  </div>
+</div>
+<section style="height:100vh">
+
+<h1>jlasdhgfjhasdgfjdsagh{{schooldetails.name}}</h1>
+<h1>{{schooldetails.bloodgroup}}</h1>
+<h1>{{schooldetails.Schoolid}}</h1>
+<h1>{{schooldetails.dob}}</h1>
+
+</section>
+{% endblock %}
+<!-- 
 <h1 align="center" style="padding-top: 5%;">Headmaster Login Details</h1>
 
 <div class="card mb-4 shadow-sm" style="margin: 5%; padding: 2%;"> 
@@ -28,6 +84,4 @@
   </div>
   
 
-</div>
-
-{% endblock %}
+</div> -->
