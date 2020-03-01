@@ -3,7 +3,7 @@
 {% block content %}
 
 <!-- -----------------------------------------------
-            Noon Feeding Committee Login
+            Higher Authority Login
 ---------------------------------------------------->
 
 <div class="row">
@@ -26,33 +26,33 @@
       </center>
      <h5 align="center" style="padding-top: 5%;">Diet Plan</h5>
      <center>
-      <a href="{% url 'accounts:render' %}"><button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">Prepare Diet</button></a>
+      <a href="{% url 'accounts:render' %}"><button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">View Diet</button></a>
      </center>
   </div>
   <!--Card box for the Diet plan report tab-->
   
-  <!-- <div class="col-2 card  shadow-sm" style="margin-top:10%;margin-left: 2%;height: 200px;">
-      <center>
-          <img src="{%static 'food.png'%}" alt="" style="height: 50px;width: 50px;margin-top: 30px;">
-      </center>
-     <h5 align="center" style="padding-top: 5%;">Diet Plan</h5>
-     <center>
-      <a href="{% url 'accounts:render' %}"><button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">Prepare Diet</button></a>
-     </center>
-  </div> -->
+  <div class="col-2 card  shadow-sm" style="margin-top:10%;margin-left: 2%;height: 200px;">
+    <center>
+        <img src="{%static 'money.png'%}" alt="" style="height: 50px;width: 50px;margin-top: 30px;">
+    </center>
+   <h5 align="center"style="padding-top: 5%;">Billing</h5>
+   <center>
+     <a href="{% url 'accounts:billgen' %}"><button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">View bill</button></a>
+   </center>
+</div> 
   <!--Card box for the Billing report report tab-->
   
-  <!-- <div class="col-2 card  shadow-sm" style="margin-top:10%;margin-left: 2%;height: 200px;">
+  <div class="col-2 card  shadow-sm" style="margin-top:10%;margin-left: 2%;height: 200px;">
       <center>
-          <img src="{%static 'money.png'%}" alt="" style="height: 50px;width: 50px;margin-top: 30px;">
+          <img src="{%static 'graphic.png'%}" alt="" style="height: 50px;width: 50px;margin-top: 30px;">
       </center>
-     <h5 align="center"style="padding-top: 5%;">Billing</h5>
+     <h5 align="center"style="padding-top: 5%;">District wise stats </h5>
      <center>
-       <a href="{% url 'accounts:billgen' %}"><button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">Update bill</button></a>
+       <a href="#"><button type="button" class="btn btn-primary" style="margin-top: 5%;width: 150px;">see stats</button></a>
      </center>
   </div> 
   
   
-</div> -->
+</div>
 
 {%endblock %}

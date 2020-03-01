@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth import login,logout
 from django.http import HttpResponse
-from .models import Hmdetails,Studentdetails,Menu
+from .models import Hmdetails,Studentdetails,Menu,Billupload
 from . import forms
 
 #renders NF page
@@ -51,8 +51,10 @@ def billgen_view(request):
             instance.save()
             return redirect('accounts:billgen')
      else:
-        form = forms.CreateArticles() 
-     return render(request,'accounts/billgen.html',{'form':form})
+        form = forms.CreateArticles()
+     photos = Billupload.objects.all()
+     photo = Billupload.objects.filter() 
+     return render(request,'accounts/billgen.html',{'form':form,'photos':photos})
 
 def stock_view(request):
     return render(request,'accounts/stock.html')
